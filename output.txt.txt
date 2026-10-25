@@ -1,0 +1,24 @@
+C1: Pass
+Input: score=80, doc=True, income=30000, failed=0
+Expected: ELIGIBLE
+Actual: ELIGIBLE
+Reason: all conditions met
+
+C2: Income fails
+Input: score=85, docs=True, income=90000, failed=0
+Expected: REJECT
+Actual: Reject
+Reason: income is 50000 or more
+
+C3: Failed course
+Input: score=85, docs=True, income=30000, failed=2
+Expected: REJECT
+Actual: Reject
+Reason: failed one or more courses
+
+C4: Boundary (score exactly 70)
+Input: score=70, docs=True, income=30000, failed=0
+Expected: ELIGIBLE
+Actual: ELIGIBLE
+Reason: all conditions met
+
