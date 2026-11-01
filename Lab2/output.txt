@@ -1,0 +1,6 @@
+1 | previous: None | percept: (29, True) | target: COOL | SEND
+2 | previous: COOL | percept: (29, True) | target: COOL | NO COMMAND
+3 | previous: COOL | percept: (20, True) | target: IDLE | SEND
+4 | previous: IDLE | percept: (26, True) | target: IDLE | NO COMMAND
+5 | previous: IDLE | percept: (19, True) | target: WARM | SEND
+6 | previous: WARM | percept: (29, False) | target: ECO | SEND 

@@ -1,0 +1,4 @@
+1 | previous: None | percept: (26.1, True) | target: COOL | SEND
+2 | previous: COOL | percept: (25.9, True) | target: IDLE | SEND
+3 | previous: IDLE | percept: (26.1, True) | target: COOL | SEND
+4 | previous: COOL | percept: (25.9, True) | target: IDLE | SEND
