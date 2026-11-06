@@ -17,6 +17,9 @@ What the program does
 
 Files
 lab4_astar_audit.py:   source code
+
 lab4_output.txt: output of the program
+
 README.md: this file
+
 Lab4_Report.docx: lab report
