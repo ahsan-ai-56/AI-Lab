@@ -1,0 +1,38 @@
+Heuristic audit (consistency check)
+   S -> A : h(u) = 5 <= 1 + 4 = 5 -> OK
+   S -> B : h(u) = 5 <= 4 + 4 = 8 -> OK
+   A -> C : h(u) = 4 <= 2 + 2 = 4 -> OK
+   B -> G : h(u) = 4 <= 5 + 0 = 5 -> OK
+   C -> G : h(u) = 2 <= 3 + 0 = 3 -> OK
+
+Run 1: A* with supplied heuristic
+  h values: {'S': 5, 'A': 4, 'B': 4, 'C': 2, 'G': 0}
+  Path: ['S', 'A', 'C', 'G'] | returned cost: 6 | independent cost: 6
+  Processed-node trace (node, g, h, f):
+    ('S', 0, 5, 5)
+    ('A', 1, 4, 5)
+    ('C', 3, 2, 5)
+    ('G', 6, 0, 6)
+  Expansion count (goal excluded): 3
+
+Run 2: UCS control (all h = 0)
+  h values: {'S': 0, 'A': 0, 'B': 0, 'C': 0, 'G': 0}
+  Path: ['S', 'A', 'C', 'G'] | returned cost: 6 | independent cost: 6
+  Processed-node trace (node, g, h, f):
+    ('S', 0, 0, 0)
+    ('A', 1, 0, 1)
+    ('C', 3, 0, 3)
+    ('B', 4, 0, 4)
+    ('G', 6, 0, 6)
+  Expansion count (goal excluded): 4
+
+Overestimate experiment: h(C) changed from 2 to 10 (true remaining cost of C is 3)
+Run 3: A* with h(C) = 10
+  h values: {'S': 5, 'A': 4, 'B': 4, 'C': 10, 'G': 0}
+  Path: ['S', 'B', 'G'] | returned cost: 9 | independent cost: 9
+  Processed-node trace (node, g, h, f):
+    ('S', 0, 5, 5)
+    ('A', 1, 4, 5)
+    ('B', 4, 4, 8)
+    ('G', 9, 0, 9)
+  Expansion count (goal excluded): 3
