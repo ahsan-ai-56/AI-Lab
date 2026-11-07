@@ -1,0 +1,37 @@
+Case 1: original order (Section 5.1 tree, padded)
+  leaves: [3, 5, 2, 9, 0, 7, 0, 0]
+  Minimax value: 5 | leaves evaluated: 8
+  Alpha-beta value: 5 | leaves evaluated: 8
+  Same root value: True
+    PRUNE at MAX node (depth 2, index 1): alpha=9 >= beta=5
+    PRUNE at MIN node (depth 1, index 1): alpha=5 >= beta=0
+
+Case 2: all leaves reversed
+  leaves: [0, 0, 7, 0, 9, 2, 5, 3]
+  Minimax value: 5 | leaves evaluated: 8
+  Alpha-beta value: 5 | leaves evaluated: 7
+  Same root value: True
+    PRUNE at MAX node (depth 2, index 1): alpha=7 >= beta=0
+
+Case 3: root subtrees swapped
+  leaves: [0, 7, 0, 0, 3, 5, 2, 9]
+  Minimax value: 5 | leaves evaluated: 8
+  Alpha-beta value: 5 | leaves evaluated: 8
+  Same root value: True
+    PRUNE at MAX node (depth 2, index 3): alpha=9 >= beta=5
+
+Case 4: leaves within each pair swapped
+  leaves: [5, 3, 9, 2, 7, 0, 0, 0]
+  Minimax value: 5 | leaves evaluated: 8
+  Alpha-beta value: 5 | leaves evaluated: 7
+  Same root value: True
+    PRUNE at MAX node (depth 2, index 1): alpha=9 >= beta=5
+    PRUNE at MIN node (depth 1, index 1): alpha=5 >= beta=0
+
+Case 5: Section 5.2 tree
+  leaves: [3, 5, 2, 9, 3, 5, 2, 9]
+  Minimax value: 5 | leaves evaluated: 8
+  Alpha-beta value: 5 | leaves evaluated: 6
+  Same root value: True
+    PRUNE at MAX node (depth 2, index 1): alpha=9 >= beta=5
+    PRUNE at MIN node (depth 1, index 1): alpha=5 >= beta=5
